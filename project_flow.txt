@@ -1,0 +1,24 @@
+step 1. initialized from https://github.com/amala-research/Drillguard-powered-by-Artificial-Intelligence-.git
+step2. cloned the repo and then downloaded the dataset
+step2.1 : uv add pandas numpy scikit-learn matplotlib seaborn
+          uv add --dev pytest jupyterlab ipykernel
+          uv sync
+          uv run python --version 
+
+          for refernce : what it means : uv add PACKAGE_NAME      # install packages
+                                         uv run python FILE.py    # run Python
+                                        uv run pytest            # run tests
+
+step3. Project structure:
+
+mkdir -p data/raw notebooks src/drillguard_ai tests
+touch src/drillguard_ai/__init__.py 
+
+for eference what we did:data/raw/          → original drilling dataset
+notebooks/         → EDA and experiments
+src/drillguard_ai/ → reusable Python code
+tests/             → code tests
+
+step4. move the dataset in data/raw and run to check the datauv run python -c "import pandas as pd; df=pd.read_csv('data/raw/Well_58-32.csv'); print(df.shape)"
+
+step5. run the code in notebooks/01_EDA+model_build.ipynb
